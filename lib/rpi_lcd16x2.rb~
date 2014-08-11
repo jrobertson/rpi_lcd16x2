@@ -131,7 +131,7 @@ class RpiLcd16x2
   end
   
   def print_text(s)
-    s.each_byte.to_a.map{|x| lcd_write ("%08b" % x).each_char.to_a.map(&:to_i)}
+    s.each_byte.to_a.map{|x| ("%08b" % x).each_char.to_a.map(&:to_i)}
   end
 
   # Display automatically goes to next line when we hit 40 chars
