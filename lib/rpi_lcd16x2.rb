@@ -129,11 +129,9 @@ class RpiLcd16x2
 
     write_command d6: 1, d5: 1, d4: 1
   end
-
-  # Loop through each character in the string, convert it to binary, 
-  #                                                   and print it to the LCD
+  
   def print_text(s)
-    lcd_write s.each_byte.to_a.map(&:to_i)
+    s.each_byte.to_a.map{|x| ("%08b" % x).each_char.to_a.map(&:to_i)}
   end
 
   # Display automatically goes to next line when we hit 40 chars
