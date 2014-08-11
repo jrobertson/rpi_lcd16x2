@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'rpi_lcd16x2'
-  s.version = '0.1.1'
+  s.version = '0.1.2'
   s.summary = 'Display text on a 16x2 LCD connected to a Raspberry Pi'
   s.authors = ['James Robertson']
   s.files = Dir['lib/**/*.rb']
