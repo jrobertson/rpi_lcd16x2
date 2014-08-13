@@ -7,8 +7,6 @@
 
 require 'wiringpi'
 
-T_MS = 0.000001
-
 
 class RpiLcd16x2
 
@@ -74,7 +72,7 @@ class RpiLcd16x2
 
   protected
 
-  def cmd(h) write_command; write_command h;  sleep 0.01  end
+  def cmd(h) write_command; write_command h;  sleep 0.001  end
 
   # Sets interface data length (DL), number of display line (N), 
   #                                                and character font (F).
@@ -101,7 +99,7 @@ class RpiLcd16x2
   # Indicate to LCD that command should be 'executed'
   #
   def pulse_enable()
-    [0,1,0].each {|x| Wiringpi.digitalWrite(@p_en, x); sleep T_MS * 10}
+    [1,0].each {|x| Wiringpi.digitalWrite(@p_en, x)}
   end
 
 end

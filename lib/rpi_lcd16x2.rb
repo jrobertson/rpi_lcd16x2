@@ -82,8 +82,8 @@ class RpiLcd16x2
   # e.g.  0  0  1 DL  N   F  *   *
   #      d7 d6 d5 d4  d7 d6 d5 d4
   def function_set()
-    write_command rs: 1, d7: 0, d6: 0, d5: 1, d4: 0
-    write_command rs: 1, d7: 1, d6: 0, d5: nil, d4: nil
+    write_command rs: 0, d7: 0, d6: 0, d5: 1,   d4: 0
+    write_command rs: 0, d7: 1, d6: 0, d5: nil, d4: nil
   end
 
   def write_command(rs: 0, d7: 0, d6: 0, d5: 0, d4: 0)
